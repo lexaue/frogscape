@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4806684792858124946}
   - component: {fileID: 8551894680185319623}
   - component: {fileID: 4331683924247944887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Kornjaca
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,15 +1,20 @@
 using System.Collections;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class Frogscape : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     public Sprite idleSprite;
 
     public Sprite leapSprite;
 
+    public Sprite deadSprite;
+
+    private Vector3 spawnPosition;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spawnPosition = transform.position;
     }
     private void Update(){
        
@@ -38,7 +43,34 @@ public class NewBehaviourScript : MonoBehaviour {
     private void Move(Vector3 direction)
     {
         Vector3 destination = transform.position + direction;
-        StartCoroutine(Leap(destination));
+
+        Collider2D barrier=Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("Barrier"));
+        Collider2D platform = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("Platform"));
+        Collider2D obstacle = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("Obstacle"));
+
+        if (barrier != null)
+        {
+            return;
+        }
+
+        if(platform != null)
+        {
+            transform.SetParent(platform.transform);
+        }
+        else
+        {
+            transform.SetParent(null);
+        }
+
+        if (obstacle != null && platform==null)
+        {
+            transform.position = destination;
+            Death();
+        }
+        else
+        {
+            StartCoroutine(Leap(destination)); 
+        }
     }
     private IEnumerator Leap(Vector3 destination)
     {
@@ -57,5 +89,33 @@ public class NewBehaviourScript : MonoBehaviour {
         }
         transform.position = destination;
         spriteRenderer.sprite =idleSprite;
+    }
+    
+    private void Death()
+    {
+        StopAllCoroutines();
+        transform.rotation=Quaternion.identity;
+        spriteRenderer.sprite = deadSprite;
+        enabled = false;
+
+        Invoke(nameof(Respawn), 1f);
+    }
+
+    public void Respawn()
+    {
+        StopAllCoroutines();
+        transform.rotation = Quaternion.identity;
+        transform.position = spawnPosition;
+        spriteRenderer.sprite = idleSprite;
+        enabled = true;
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(enabled && other.gameObject.layer== LayerMask.NameToLayer("Obstacle") && transform.parent==null)
+        {
+            Death();
+        }
     }
 }

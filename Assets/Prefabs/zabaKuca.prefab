@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2197318393587144161}
   - component: {fileID: 8995153020331169213}
   - component: {fileID: 1191174031553980180}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HomeFrog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,8 @@ GameObject:
   - component: {fileID: 6764540802473657323}
   - component: {fileID: 6621292096302408617}
   - component: {fileID: 4925410463415655043}
-  m_Layer: 0
+  - component: {fileID: 2489400846457143235}
+  m_Layer: 8
   m_Name: zabaKuca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +246,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -261,3 +262,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2489400846457143235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018110047906424865}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee6ff5b2f9b85548824229cd2ab52d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frog: {fileID: 3725999876746640721}

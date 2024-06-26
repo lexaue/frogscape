@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6444667682243696897}
   - component: {fileID: 6268651399697555208}
   - component: {fileID: 7091972650255100305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debloSredina (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370825589973030923}
   - component: {fileID: -8881173507238630705}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debla6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 1885550712765120919}
   - component: {fileID: 1883271887197686302}
   - component: {fileID: 7426616939529753742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debloKraj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 2088072381060615508}
   - component: {fileID: 6714300877010752712}
   - component: {fileID: 3419312201413912643}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debloSredina (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 9178294263453766291}
   - component: {fileID: 5844521895058070393}
   - component: {fileID: 3306648417900061266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debloSredina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 4239709765407745280}
   - component: {fileID: 1903074901400858882}
   - component: {fileID: 4568440835530073205}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debloPocetak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 571164339006657709}
   - component: {fileID: 5223620506796968114}
   - component: {fileID: 2549148776574067763}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: debloSredina (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
