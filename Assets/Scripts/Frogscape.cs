@@ -11,6 +11,8 @@ public class Frogscape : MonoBehaviour {
 
     private Vector3 spawnPosition;
 
+    private float farthestRow;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -69,6 +71,11 @@ public class Frogscape : MonoBehaviour {
         }
         else
         {
+            if (destination.y > farthestRow)
+            {
+                farthestRow = destination.y;
+                FindObjectOfType<GameManager>().AdvancedRow();
+            }
             StartCoroutine(Leap(destination)); 
         }
     }
@@ -91,14 +98,14 @@ public class Frogscape : MonoBehaviour {
         spriteRenderer.sprite =idleSprite;
     }
     
-    private void Death()
+    public void Death()
     {
         StopAllCoroutines();
         transform.rotation=Quaternion.identity;
         spriteRenderer.sprite = deadSprite;
         enabled = false;
 
-        Invoke(nameof(Respawn), 1f);
+        FindObjectOfType<GameManager>().Died();
     }
 
     public void Respawn()
@@ -106,8 +113,11 @@ public class Frogscape : MonoBehaviour {
         StopAllCoroutines();
         transform.rotation = Quaternion.identity;
         transform.position = spawnPosition;
+        farthestRow = spawnPosition.y;
         spriteRenderer.sprite = idleSprite;
+        gameObject.SetActive(true);
         enabled = true;
+
 
     }
 

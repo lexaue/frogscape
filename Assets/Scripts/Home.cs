@@ -22,8 +22,7 @@ public class Home : MonoBehaviour
         {
             enabled = true;
 
-            Frogscape frogscape = other.GetComponent<Frogscape>();
-            frogscape.Respawn();
+            FindObjectOfType<GameManager>().HomeOccupied();
         }
     }
 }
