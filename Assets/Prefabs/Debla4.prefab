@@ -269,6 +269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5564362817859666010}
+  - component: {fileID: 6869889555520382401}
   m_Layer: 0
   m_Name: Debla4
   m_TagString: Untagged
@@ -295,6 +296,21 @@ Transform:
   - {fileID: 2504804135379244440}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6869889555520382401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563699676374005852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceaa820d6becc114bb2435b0793c6a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 1, y: 0}
+  speed: 2
+  size: 4
 --- !u!1 &6992773830162620985
 GameObject:
   m_ObjectHideFlags: 0
