@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour 
 { 
@@ -13,6 +14,12 @@ public class GameManager : MonoBehaviour
     private Home[] homes;
 
     public GameObject gameOverMenu;
+
+    public Text scoreText;
+
+    public Text livesText;
+
+    public Text timeText;
 
     private int time;
 
@@ -29,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void NewGame()
     {
-        gameOverMenu.SetActive(false);  
+        gameOverMenu.SetActive(false);   
 
         SetScore(0);
         SetLives(3);
@@ -57,11 +64,13 @@ public class GameManager : MonoBehaviour
     private IEnumerator Timer(int duration)
     {
         time = duration;
+        timeText.text = time.ToString();
         while (time > 0)
         {
             yield return new WaitForSeconds(1);
 
             time--;
+            timeText.text = time.ToString();
         }
 
         frogscape.Death();
@@ -146,10 +155,12 @@ public class GameManager : MonoBehaviour
     private void SetScore(int score)
     {
         this.score = score;
+        scoreText.text= score.ToString();
     }
 
     private void SetLives(int lives)
     {
         this.lives = lives;
+        livesText.text = lives.ToString();
     }
 }
